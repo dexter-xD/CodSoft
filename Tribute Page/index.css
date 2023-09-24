@@ -1,0 +1,551 @@
+.image-gallery-child,
+.image-gallery-item {
+  position: absolute;
+  width: calc(100% - 479px);
+  right: 479px;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.image-gallery-child {
+  height: calc(100% - 448px);
+  top: 224px;
+  bottom: 224px;
+  object-fit: cover;
+}
+.image-gallery-item {
+  height: calc(100% - 672px);
+  top: 672px;
+  bottom: 0;
+}
+.image-gallery-inner {
+  height: calc(100% - 672px);
+  width: calc(100% - 243px);
+  top: 224px;
+  right: 0;
+  bottom: 448px;
+  left: 243px;
+  object-fit: cover;
+}
+.frame-icon,
+.image-gallery-child1,
+.image-gallery-child2,
+.image-gallery-inner {
+  position: absolute;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.frame-icon {
+  height: calc(100% - 448px);
+  width: calc(100% - 483px);
+  top: 448px;
+  right: 240px;
+  bottom: 0;
+  left: 243px;
+  object-fit: cover;
+}
+.image-gallery-child1,
+.image-gallery-child2 {
+  height: calc(100% - 672px);
+  width: calc(100% - 482px);
+  right: 0;
+  left: 482px;
+}
+.image-gallery-child1 {
+  top: 448px;
+  bottom: 224px;
+  object-fit: cover;
+}
+.image-gallery-child2 {
+  top: 672px;
+  bottom: 0;
+}
+.group-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  width: 190px;
+  height: 190px;
+}
+.heart-2-icon {
+  position: absolute;
+  top: 66.7px;
+  left: 65px;
+  width: 45.03px;
+  height: 39.84px;
+}
+.e,
+.e1,
+.i,
+.l,
+.l1,
+.o,
+.o1,
+.s,
+.v,
+.v1 {
+  position: absolute;
+  top: 50.29px;
+  left: 0;
+  transform: rotate(-56.33deg);
+  transform-origin: 0 0;
+}
+.e,
+.e1,
+.i,
+.l1,
+.o,
+.o1,
+.s,
+.v,
+.v1 {
+  top: 30.99px;
+  left: 14.26px;
+  transform: rotate(-42.25deg);
+}
+.e,
+.e1,
+.i,
+.l1,
+.o1,
+.s,
+.v,
+.v1 {
+  top: 15.17px;
+  left: 33.6px;
+  transform: rotate(-28.17deg);
+}
+.e,
+.e1,
+.i,
+.l1,
+.o1,
+.s,
+.v1 {
+  top: 4.96px;
+  left: 55.17px;
+  transform: rotate(-14.44deg);
+}
+.e1,
+.i,
+.l1,
+.o1,
+.s,
+.v1 {
+  top: 0.45px;
+  left: 77.53px;
+  transform: rotate(-3.61deg);
+}
+.e1,
+.l1,
+.o1,
+.s,
+.v1 {
+  top: 0;
+  left: 92.25px;
+  transform: rotate(6.86deg);
+}
+.e1,
+.l1,
+.o1,
+.v1 {
+  top: 3.69px;
+  left: 113.62px;
+  transform: rotate(17.33deg);
+}
+.e1,
+.o1,
+.v1 {
+  top: 8.58px;
+  left: 127.8px;
+  transform: rotate(28.53deg);
+}
+.e1,
+.v1 {
+  top: 21.63px;
+  left: 149.1px;
+  transform: rotate(42.61deg);
+}
+.e1 {
+  top: 38.64px;
+  left: 165.84px;
+  transform: rotate(56.33deg);
+}
+.group,
+.l2,
+.o2 {
+  position: absolute;
+  left: 0;
+}
+.group {
+  top: 0;
+  width: 173.6px;
+  height: 66.37px;
+}
+.l2,
+.o2 {
+  top: -50.29px;
+  transform: rotate(123.67deg);
+  transform-origin: 0 0;
+}
+.o2 {
+  top: -30.99px;
+  left: -14.26px;
+  transform: rotate(137.75deg);
+}
+.e2,
+.e3,
+.group1,
+.i1,
+.l3,
+.o3,
+.s1,
+.v2,
+.v3 {
+  position: absolute;
+  top: -15.17px;
+  left: -33.6px;
+  transform: rotate(151.83deg);
+  transform-origin: 0 0;
+}
+.e2,
+.e3,
+.group1,
+.i1,
+.l3,
+.o3,
+.s1,
+.v3 {
+  top: -4.96px;
+  left: -55.17px;
+  transform: rotate(165.56deg);
+}
+.e3,
+.group1,
+.i1,
+.l3,
+.o3,
+.s1,
+.v3 {
+  top: -0.45px;
+  left: -77.53px;
+  transform: rotate(176.39deg);
+}
+.e3,
+.group1,
+.l3,
+.o3,
+.s1,
+.v3 {
+  top: 0;
+  left: -92.25px;
+  transform: rotate(-173.14deg);
+}
+.e3,
+.group1,
+.l3,
+.o3,
+.v3 {
+  top: -3.69px;
+  left: -113.62px;
+  transform: rotate(-162.67deg);
+}
+.e3,
+.group1,
+.o3,
+.v3 {
+  top: -8.58px;
+  left: -127.8px;
+  transform: rotate(-151.47deg);
+}
+.e3,
+.group1,
+.v3 {
+  top: -21.63px;
+  left: -149.1px;
+  transform: rotate(-137.39deg);
+}
+.e3,
+.group1 {
+  top: -38.64px;
+  left: -165.84px;
+  transform: rotate(-123.67deg);
+}
+.group1 {
+  top: 173.7px;
+  left: 174px;
+  width: 173.6px;
+  height: 66.37px;
+  transform: rotate(180deg);
+}
+.ellipse-parent,
+.heart-2-parent {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 174px;
+  height: 173.7px;
+}
+.ellipse-parent {
+  top: 17px;
+  left: 27px;
+  width: 190px;
+  height: 190px;
+}
+.group-wrapper {
+  position: relative;
+  background-color: #d7a94f;
+  width: 243px;
+  height: 224px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame-child {
+  object-fit: cover;
+}
+.frame-child,
+.frame-item {
+  position: relative;
+  width: 240px;
+  height: 224px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.frame-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.image-gallery {
+  position: absolute;
+  top: 64px;
+  right: 160px;
+  background-color: #f1f1f1;
+  width: 722px;
+  height: 896px;
+  overflow: hidden;
+}
+.bringing-your-community,
+.lorem-ipsum-dolor {
+  position: relative;
+  display: inline-block;
+  width: 533px;
+}
+.bringing-your-community {
+  letter-spacing: 0.01em;
+  font-family: "Zilla Slab";
+}
+.lorem-ipsum-dolor {
+  font-size: 24px;
+  line-height: 34px;
+  color: #252525;
+}
+.contact-us {
+  position: relative;
+  line-height: 18px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.contact-us a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.primary-button,
+.text {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.primary-button {
+  border-radius: 40px;
+  background-color: #202020;
+  overflow: hidden;
+  flex-direction: row;
+  padding: 24px 40px;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+.text {
+  flex-direction: column;
+  gap: 24px;
+}
+.the-standard-chunk {
+  position: relative;
+  line-height: 21px;
+  display: inline-block;
+  font-weight: 300;
+  width: 445px;
+  flex-shrink: 0;
+}
+.content,
+.quote,
+.the-standard-chunk-of-lorem-ip-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.the-standard-chunk-of-lorem-ip-wrapper {
+  background-color: #333;
+  flex-direction: row;
+  padding: 16px;
+}
+.content,
+.quote {
+  flex-direction: column;
+}
+.quote {
+  background-color: #fff;
+  box-shadow: 10px 12px 0#333;
+  border: 2px solid #333;
+  padding: 24px;
+  font-size: 15px;
+  color: #fff;
+}
+.content {
+  position: absolute;
+  top: 100px;
+  left: 160px;
+  gap: 80px;
+  font-size: 56px;
+  color: #333;
+}
+.creative {
+  top: calc(50% - 9px);
+  left: calc(50% - 32px);
+}
+.creative,
+.diverse,
+.tag {
+  position: absolute;
+}
+.tag {
+  top: 223px;
+  left: 0;
+  border-radius: 56px;
+  background-color: #fff;
+  box-shadow: 4px 6px 0#333;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  width: 100px;
+  height: 48px;
+}
+.diverse {
+  top: calc(50% - 9px);
+  left: calc(50% - 28px);
+}
+.tag1 {
+  top: 448px;
+  left: 239px;
+  border-radius: 56px;
+  background-color: #fff;
+  box-shadow: 4px 6px 0#333;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  width: 100px;
+  height: 48px;
+  text-align: left;
+}
+.caring,
+.tag1,
+.tag2 {
+  position: absolute;
+}
+.caring {
+  top: calc(50% - 9px);
+  left: calc(50% - 25px);
+}
+.tag2 {
+  top: 672px;
+  left: 0;
+  border-radius: 56px;
+  background-color: #fff;
+  box-shadow: 4px 6px 0#333;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  width: 100px;
+  height: 48px;
+}
+.inclusive {
+  top: calc(50% - 9px);
+  left: calc(50% - 33px);
+}
+.inclusive,
+.tag3,
+.tags {
+  position: absolute;
+}
+.tag3 {
+  top: 0;
+  left: 236px;
+  border-radius: 56px;
+  background-color: #fff;
+  box-shadow: 4px 6px 0#333;
+  border: 1px solid #333;
+  box-sizing: border-box;
+  width: 100px;
+  height: 48px;
+}
+.tags {
+  top: 64px;
+  right: 350px;
+  width: 339px;
+  height: 720px;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+}
+
+.rainbow-shape-icon {
+  position: absolute;
+  top: 112px;
+  left: 64px;
+  width: 176px;
+  height: 88px;
+}
+.div,
+.div1 {
+  position: relative;
+}
+.div1 {
+  background-color: #fdfeff;
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: 24px;
+  color: #fff;
+  font-family: Inter;
+}
+
+.name{
+    padding: 0;
+    margin: 0;
+}
+
+.name h1{
+    font-size: 55px;
+    font-family: 'Croissant One', cursive;
+    padding: 0;
+    margin: 0;
+}
