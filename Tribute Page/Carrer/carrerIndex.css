@@ -1,0 +1,166 @@
+.div2 {
+    z-index: 0;
+  }
+  .div2,
+  .title {
+    position: relative;
+    font-weight: 500;
+  }
+  .lorem-ipsum-dolor {
+    position: relative;
+    font-size: var(--font-size-lg);
+    display: inline-block;
+    width: 241px;
+  }
+  .title-parent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-5xs);
+    z-index: 1;
+    font-size: var(--font-size-13xl);
+    color: var(--color-darkslategray);
+  }
+  .frame-child {
+    position: absolute;
+    margin: 0 !important;
+    top: 8px;
+    left: 220px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    z-index: 2;
+  }
+  .cards-child,
+  .cards-inner,
+  .parent {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .parent {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    gap: var(--gap-base);
+  }
+  .cards-child,
+  .cards-inner {
+    border-radius: var(--br-base);
+    background-color: #f1c2b0;
+    flex-direction: row;
+    align-items: center;
+    padding: var(--padding-base) var(--padding-15xl);
+  }
+  .cards-child {
+    background-color: #f9eb98;
+  }
+  .frame-inner {
+    position: absolute;
+    margin: 0 !important;
+    top: 0;
+    left: 211px;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    z-index: 2;
+  }
+  .frame-div {
+    border-radius: var(--br-base);
+    background-color: #c0d9dd;
+    align-items: center;
+    padding: var(--padding-base) var(--padding-15xl);
+  }
+  .cards,
+  .cards-inner1,
+  .frame-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .cards-inner1 {
+    border-radius: var(--br-base);
+    background-color: #6975e8;
+    align-items: center;
+    padding: var(--padding-base) var(--padding-15xl);
+  }
+  .cards {
+    position: absolute;
+    top: 706px;
+    left: 66px;
+    align-items: flex-start;
+    gap: 25px;
+  }
+  .crearte-your-online {
+    position: relative;
+    line-height: 74px;
+    display: inline-block;
+    width: 577px;
+  }
+  .lorem-ipsum-dolor4 {
+    position: relative;
+    font-size: 24px;
+    display: inline-block;
+    width: 497px;
+  }
+  .contact-us {
+    position: relative;
+    line-height: 18px;
+    font-weight: 500;
+  }
+  .primary-button,
+  .text {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .primary-button {
+    border-radius: 40px;
+    background-color: var(--color-darkslategray);
+    overflow: hidden;
+    flex-direction: row;
+    padding: 24px 56px;
+    font-size: 22px;
+    color: var(--color-white);
+  }
+  .text {
+    position: absolute;
+    top: 151px;
+    left: 64px;
+    flex-direction: column;
+    gap: 32px;
+    font-size: 60px;
+    color: var(--color-darkslategray);
+  }
+  .hero-image-icon {
+    position: absolute;
+    top: 133px;
+    left: 700px;
+    width: 651px;
+    height: 469px;
+  }
+  .div,
+  .div1 {
+    position: relative;
+  }
+  .div1 {
+    background-color: var(--color-white);
+    width: 1440px;
+    height: 1024px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    font-size: var(--font-size-45xl);
+    color: var(--color-white);
+    font-family: var(--font-roboto-mono);
+  }
+  
