@@ -1,7 +1,42 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useRegisterMutation } from "../slices/userApiSlice";
+import { setCredentials } from "../slices/authSlice";
 
 function Signup() {
   const [sidebar, setsidebar] = useState();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const [register] = useRegisterMutation();
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      navigate("/");
+    }
+  }, [userInfo, navigate]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      toast.error("Password is incorrect");
+    } else {
+      try {
+        const res = await register({ name, email, password }).unwrap();
+        dispatch(setCredentials({ ...res }));
+      } catch (err) {
+        toast.error(err?.data?.message || err.error);
+      }
+    }
+  };
+
   return (
     <div className="h-full bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-16 px-4">
       <div className="flex flex-col items-center justify-center">
@@ -63,71 +98,82 @@ function Signup() {
               Continue with Google
             </p>
           </button>
+          <form onSubmit={handleSubmit}>
+            <div className="w-full flex items-center justify-between py-5">
+              <hr className="w-full bg-gray-400" />
+              <p className="text-base font-medium leading-4 px-2.5 text-gray-400">
+                OR
+              </p>
+              <hr className="w-full bg-gray-400  " />
+            </div>
+            <div>
+              <lable className="text-sm font-medium leading-none text-gray-800">
+                Name
+              </lable>
+              <input
+                aria-label="enter email adress"
+                role="input"
+                type="Name"
+                className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </div>
+            <div>
+              <lable className="text-sm font-medium leading-none text-gray-800">
+                Email
+              </lable>
+              <input
+                aria-label="enter email adress"
+                role="input"
+                type="Email"
+                className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="mt-6  w-full">
+              <lable className="text-sm font-medium leading-none text-gray-800">
+                Password
+              </lable>
+              <div className="relative flex items-center justify-center">
+                <input
+                  aria-label="enter Password"
+                  role="input"
+                  type="password"
+                  className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </div>
+            </div>
+            <div className="mt-6  w-full">
+              <lable className="text-sm font-medium leading-none text-gray-800">
+                Confirm Password
+              </lable>
+              <div className="relative flex items-center justify-center">
+                <input
+                  aria-label="enter Password"
+                  role="input"
+                  type="password"
+                  className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+              </div>
+            </div>
 
-          <div className="w-full flex items-center justify-between py-5">
-            <hr className="w-full bg-gray-400" />
-            <p className="text-base font-medium leading-4 px-2.5 text-gray-400">
-              OR
-            </p>
-            <hr className="w-full bg-gray-400  " />
-          </div>
-          <div>
-            <lable className="text-sm font-medium leading-none text-gray-800">
-              Username
-            </lable>
-            <input
-              aria-label="enter email adress"
-              role="input"
-              type="name"
-              className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
-            />
-          </div>
-          <div>
-            <lable className="text-sm font-medium leading-none text-gray-800">
-              Email
-            </lable>
-            <input
-              aria-label="enter email adress"
-              role="input"
-              type="email"
-              className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
-            />
-          </div>
-          <div className="mt-6  w-full">
-            <lable className="text-sm font-medium leading-none text-gray-800">
-              Password
-            </lable>
-            <div className="relative flex items-center justify-center">
-              <input
-                aria-label="enter Password"
-                role="input"
-                type="password"
-                className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
-              />
+            <div className="mt-8">
+              <button
+                type="submit"
+                role="button"
+                aria-label="create my account"
+                className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full"
+              >
+                Sign In
+              </button>
             </div>
-          </div>
-          <div className="mt-6  w-full">
-            <lable className="text-sm font-medium leading-none text-gray-800">
-              Confirm Password
-            </lable>
-            <div className="relative flex items-center justify-center">
-              <input
-                aria-label="enter Password"
-                role="input"
-                type="password"
-                className="bg-gray-200 border rounded focus:outline-none text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
-              />
-            </div>
-          </div>
-          <div className="mt-8">
-            <button
-              role="button"
-              aria-label="create my account"
-              className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full"
-            >
-              Sign In
-            </button>
-          </div>
+          </form>
         </div>
       </div>
     </div>

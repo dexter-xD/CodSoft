@@ -1,10 +1,10 @@
 import React from "react";
-import BusList from "../components/BusList";
+import HotelList from "../components/HotelList";
 
 const Booking = () => {
   return (
     <div>
-      <BusList />
+      <HotelList />
     </div>
   );
 };

@@ -1,30 +1,30 @@
 import React from "react";
 
-const BusList = () => {
-  const buslist = [
+const HotelList = () => {
+  const hotellist = [
     {
       id: 1,
       name: "bus1",
       price: 550,
-      time: "8.30 pm",
-      destination: "Kolkata To Raiganj",
-      seat: 24,
+      location: "Kolkata",
+      description: "Kolkata To Raiganj",
+      rooms: 24,
     },
     {
       id: 2,
       name: "bus2",
       price: 850,
-      time: "9.00 am",
-      destination: "Kolkata To Raiganj",
-      seat: 15,
+      location: "Kolkata",
+      description: "Kolkata To Raiganj",
+      rooms: 15,
     },
     {
       id: 3,
       name: "bus3",
       price: 1000,
-      time: "10.30 pm",
-      destination: "Kolkata To Raiganj",
-      seat: 10,
+      location: "Kolkata",
+      description: "Kolkata To Raiganj",
+      rooms: 10,
     },
   ];
   return (
@@ -46,7 +46,7 @@ const BusList = () => {
                         className="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
                         <button className="flex items-center gap-x-3 focus:outline-none">
-                          <span>Bus Name</span>
+                          <span>Hotel Name</span>
 
                           <svg
                             className="h-3"
@@ -80,21 +80,21 @@ const BusList = () => {
                         scope="col"
                         className="px-12 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        Timing
+                        Location
                       </th>
 
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        Destination
+                        Description
                       </th>
 
                       <th
                         scope="col"
                         className="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400"
                       >
-                        Seat availability
+                        Room availability
                       </th>
 
                       <th
@@ -110,12 +110,12 @@ const BusList = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-                    {buslist.map((bus) => (
-                      <tr key={bus.id}>
+                    {hotellist.map((hotel) => (
+                      <tr key={hotel.id}>
                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                           <div>
                             <h2 className="font-medium text-gray-800 dark:text-white ">
-                              {bus.name}
+                              {hotel.name}
                             </h2>
                             <p className="text-sm font-normal text-gray-600 dark:text-gray-400">
                               catalogapp.io
@@ -124,13 +124,13 @@ const BusList = () => {
                         </td>
                         <td className="px-12 py-4 text-sm font-medium whitespace-nowrap">
                           <div className="inline px-3 py-1 text-sm font-normal rounded-full text-emerald-500 gap-x-2 bg-emerald-100/60 dark:bg-gray-800">
-                            {bus.time}
+                            {hotel.location}
                           </div>
                         </td>
                         <td className="px-4 py-4 text-sm whitespace-nowrap">
                           <div>
                             <h4 className="text-gray-700 dark:text-gray-200">
-                              {bus.destination}
+                              {hotel.description}
                             </h4>
                             <p className="text-gray-500 dark:text-gray-400">
                               Brings all your news into one place
@@ -140,7 +140,7 @@ const BusList = () => {
                         <td className="px-4 py-4 text-sm whitespace-nowrap justify-center items-center">
                           <div>
                             <h2 className="font-medium text-gray-800 dark:text-white ml-10">
-                              {bus.seat}
+                              {hotel.rooms}
                             </h2>
                           </div>
                         </td>
@@ -148,7 +148,7 @@ const BusList = () => {
                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                           <div>
                             <h2 className="font-medium text-gray-800 dark:text-white ">
-                              ₹ {bus.price}
+                              ₹ {hotel.price}
                             </h2>
                           </div>
                         </td>
@@ -171,4 +171,4 @@ const BusList = () => {
   );
 };
 
-export default BusList;
+export default HotelList;
