@@ -9,6 +9,8 @@ import Faq from "./components/Faq";
 import Testimonial from "./components/Testimonial";
 import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Booking from "./pages/Booking";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </BrowserRouter>

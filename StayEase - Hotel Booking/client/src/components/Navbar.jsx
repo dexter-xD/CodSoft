@@ -9,7 +9,7 @@ const navigation = [
   { name: "About", href: "/about" },
 ];
 
-const user = false;
+const user = true;
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -95,29 +95,14 @@ const Navbar = () => {
                         <>
                           <Menu.Item>
                             {({ active }) => (
-                              <a
-                                href="#"
-                                className={classNames(
-                                  active ? "bg-gray-100" : "",
-                                  "block px-4 py-2 text-sm text-gray-700"
-                                )}
-                              >
-                                Your Profile
-                              </a>
-                            )}
-                          </Menu.Item>
-
-                          <Menu.Item>
-                            {({ active }) => (
-                              <a
-                                href="#"
+                              <button
                                 className={classNames(
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
                                 )}
                               >
                                 Sign out
-                              </a>
+                              </button>
                             )}
                           </Menu.Item>
                         </>
