@@ -6,11 +6,16 @@ import Hotel from "../models/hotelModel.js";
 // access public
 
 const createHotel = asyncHandler(async (req, res) => {
-  const { name, location, image_url, top } = req.body;
+  const { name, web, description, price, rooms, location, image_url, top } =
+    req.body;
 
   try {
     const newHotel = new Hotel({
       name,
+      web,
+      description,
+      price,
+      rooms,
       location,
       image_url,
       top: top || false,
@@ -69,7 +74,7 @@ const getOneHotel = asyncHandler(async (req, res) => {
 // access public
 
 const getLocationHotel = asyncHandler(async (req, res) => {
-  const { location } = req.body;
+  const { location } = req.params;
 
   try {
     const hotels = await Hotel.find({ location });

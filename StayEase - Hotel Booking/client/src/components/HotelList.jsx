@@ -1,32 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 const HotelList = () => {
-  const hotellist = [
-    {
-      id: 1,
-      name: "bus1",
-      price: 550,
-      location: "Kolkata",
-      description: "Kolkata To Raiganj",
-      rooms: 24,
-    },
-    {
-      id: 2,
-      name: "bus2",
-      price: 850,
-      location: "Kolkata",
-      description: "Kolkata To Raiganj",
-      rooms: 15,
-    },
-    {
-      id: 3,
-      name: "bus3",
-      price: 1000,
-      location: "Kolkata",
-      description: "Kolkata To Raiganj",
-      rooms: 10,
-    },
-  ];
+  const [hotels, setHotels] = useState([]);
+  const { location } = useParams();
+
+  useEffect(() => {
+    const fetchHotelsByLocation = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:5000/api/hotel/hotelsinlocation/${location}`
+        );
+        setHotels(response.data);
+      } catch (error) {
+        console.error("Error fetching hotels by location: ", error);
+      }
+    };
+
+    fetchHotelsByLocation();
+  }, [location]);
   return (
     <div>
       <section className="container px-4 mx-auto my-20">
@@ -110,15 +103,15 @@ const HotelList = () => {
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-                    {hotellist.map((hotel) => (
-                      <tr key={hotel.id}>
+                    {hotels.map((hotel) => (
+                      <tr key={hotel._id}>
                         <td className="px-4 py-4 text-sm font-medium whitespace-nowrap">
                           <div>
                             <h2 className="font-medium text-gray-800 dark:text-white ">
                               {hotel.name}
                             </h2>
                             <p className="text-sm font-normal text-gray-600 dark:text-gray-400">
-                              catalogapp.io
+                              {hotel.web}
                             </p>
                           </div>
                         </td>
@@ -154,9 +147,11 @@ const HotelList = () => {
                         </td>
 
                         <td className="px-4 py-4 text-sm whitespace-nowrap">
-                          <button className="px-3 py-3 text-white transition-colors duration-200 rounded-lg bg-red-500">
-                            Book
-                          </button>
+                          <Link to={`/checkout/${hotel._id}`}>
+                            <button className="px-3 py-3 text-white transition-colors duration-200 rounded-lg bg-red-500">
+                              Book
+                            </button>
+                          </Link>
                         </td>
                       </tr>
                     ))}

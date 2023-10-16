@@ -1,8 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Hero.css";
 
 const Hero = () => {
+  const [location, setLocation] = useState("");
   return (
     <div>
       <section className="background-radial-gradient mb-40 overflow-hidden">
@@ -68,6 +69,8 @@ const Hero = () => {
                         id="exampleFormControlInput3"
                         placeholder="Location"
                         required
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
                       />
                       <label
                         htmlFor="exampleFormControlInput3"
@@ -76,7 +79,7 @@ const Hero = () => {
                         Location
                       </label>
                     </div>
-                    <Link to="/booking">
+                    <Link to={`/getLocationHotel/${location}`}>
                       <button
                         type="button"
                         data-te-ripple-init

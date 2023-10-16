@@ -13,6 +13,6 @@ router.post("/createhotel", createHotel);
 router.get("/tophotels", getTopHotels);
 router.get("/allhotels", getHotels);
 router.get("/singlehotel/:id", getOneHotel);
-router.get("/hotelsinlocation", getLocationHotel);
+router.get("/hotelsinlocation/:location", getLocationHotel);
 
 export default router;
