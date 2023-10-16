@@ -24,6 +24,25 @@ const CheckOut = () => {
     fetchHotelById();
   }, [id]);
 
+  const handleBookHotel = async () => {
+    try {
+      const data = {
+        hotelName: hotel.name,
+        hotelPrice: total,
+      };
+
+      const response = await axios.post(
+        "http://localhost:5000/api/booking/createbooking",
+        data
+      );
+
+      console.log("Booking created:", response.data);
+      window.location.href = "/bookings";
+    } catch (error) {
+      console.error("Error creating booking:", error);
+    }
+  };
+
   return (
     <div>
       <div className="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
@@ -174,8 +193,11 @@ const CheckOut = () => {
               </p>
             </div>
           </div>
-          <button className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">
-            Place Order
+          <button
+            className="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white"
+            onClick={handleBookHotel}
+          >
+            Book Now
           </button>
         </div>
       </div>

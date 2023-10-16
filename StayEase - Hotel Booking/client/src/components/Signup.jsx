@@ -32,7 +32,7 @@ function Signup() {
         const res = await register({ name, email, password }).unwrap();
         dispatch(setCredentials({ ...res }));
       } catch (err) {
-        toast.error(err?.data?.message || err.error);
+        console.log(err);
       }
     }
   };

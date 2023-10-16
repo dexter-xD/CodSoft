@@ -6,6 +6,7 @@ import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import hotelRoutes from "./routes/hotelRoutes.js";
+import bookingRoute from "./routes/bookingRoute.js";
 
 dotenv.config();
 connectDB();
@@ -24,6 +25,7 @@ app.use(cookieParser());
 
 app.use("/api/users", userRoutes);
 app.use("/api/hotel", hotelRoutes);
+app.use("/api/booking", bookingRoute);
 
 app.get("/", (req, res) => {
   res.send("Currently in dev mode");

@@ -9,7 +9,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Booking", href: "/bookings" },
+  { name: "Bookings", href: "/bookings" },
   { name: "About", href: "/about" },
 ];
 
@@ -54,12 +54,15 @@ const Navbar = () => {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Link to="/">
+                  <Link to="/" className="flex gap-3">
                     <img
                       className="h-8 w-auto"
                       src="https://res.cloudinary.com/sohambasak/image/upload/v1697019934/StayEase/zmybfsrzn4fjvqb6xcyb.png"
                       alt="StayEase"
                     />
+                    <h1 className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-md font-bold">
+                      StayEase
+                    </h1>
                   </Link>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
