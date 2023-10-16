@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 dotenv.config();
 connectDB();
@@ -25,6 +26,9 @@ app.use("/api/users", userRoutes);
 app.get("/", (req, res) => {
   res.send("Currently in dev mode");
 });
+
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Listening on ${port}`);
